@@ -119,7 +119,7 @@
     </div>
 
 
-    <div class="container blog main gray">
+    <!-- <div class="container blog main gray">
             <img src="clarity/images/vit.png">
             <p class="caption">
                 We split an image into fixed-size patches, linearly embed each of them, add position embeddings, and feed the resulting sequence of vectors to a standard Transformer encoder. In order to perform classification, we use the standard approach of adding an extra learnable “classification token” (represented as a gray image patch) to the sequence.  
@@ -159,7 +159,7 @@
         <p class="text">
             Here is an example illustrated in <a href="https://shikun.io/projects/variational-shape-learner">VSL</a> using the <code>gray-linear</code> container colour.
         </p>
-    </div>
+    </div> -->
 
     <div class="container blog extra-large gray-linear">
         <p class="caption inline">
@@ -264,7 +264,7 @@
             Tables
         </h2>
 
-        <p class="text">
+        <!-- <p class="text">
             Clarity provides table blocks where every odd row is re-coloured with a gray tint. This helps to easily distinguish information within different rows, particularly with very wide tables. Here is an example using different model variants proposed in <a href="https://arxiv.org/pdf/2302.13971">Llama-1</a>.
             
             <div class="table-wrapper">
@@ -320,7 +320,7 @@
                     </tbody>
                 </table>
             </div>
-        </p>
+        </p> -->
 
         <h2>
             Slide Display 
@@ -399,10 +399,10 @@
                 <div class="slider-item">
                     <video loop playsinline muted autoplay src="https://mardini-vidgen.github.io/clarity/videos/5.mp4"></video>
                 </div>
-                <div class="slider-item">
+                <!-- <div class="slider-item">
                     <video loop playsinline muted autoplay src="https://mardini-vidgen.github.io/clarity/videos/6.mp4"></video>
-                </div>
-                <div class="slider-item">
+                </div> -->
+                <!-- <div class="slider-item">
                     <video loop playsinline muted autoplay src="https://mardini-vidgen.github.io/clarity/videos/7.mp4"></video>
                 </div>
                 <div class="slider-item">
@@ -430,7 +430,7 @@
                     <video loop playsinline muted autoplay src="https://mardini-vidgen.github.io/clarity/videos/15.mp4"></video>
                 </div>
                 <div class="slider-item">
-                    <video loop playsinline muted autoplay src="https://mardini-vidgen.github.io/clarity/videos/16.mp4"></video>
+                    <video loop playsinline muted autoplay src="https://mardini-vidgen.github.io/clarity/videos/16.mp4"></video> -->
                 </div>
             </div>
         </div>
@@ -539,6 +539,75 @@
             Our GigaGAN framework can also be used to train an efficient, higher-quality upsampler. This can be applied to real images, or to the outputs of other text-to-image models like diffusion. GigaGAN can synthesize ultra high-res images at 4k resolution in 3.66 seconds.
         </p>
     </div>
+
+    <div class="container blog main">
+        <h2>Interactive Image Grid</h2>
+        <p class="text">
+            Below is an example of a 4x2 interactive image grid. Hover over the smaller images to change the main image displayed.
+        </p>
+        <div class="container">
+            <!-- Main Image -->
+            <img id="mainImage" class="main-image" src="image1.jpg" alt="Main Image">
+    
+            <!-- Grid of Small Images -->
+            <div class="image-grid">
+                <div class="grid-item"><img src="small1.jpg" alt="Image 1" data-large="image1.jpg"></div>
+                <div class="grid-item"><img src="small2.jpg" alt="Image 2" data-large="image2.jpg"></div>
+                <div class="grid-item"><img src="small3.jpg" alt="Image 3" data-large="image3.jpg"></div>
+                <div class="grid-item"><img src="small4.jpg" alt="Image 4" data-large="image4.jpg"></div>
+                <div class="grid-item"><img src="small5.jpg" alt="Image 5" data-large="image5.jpg"></div>
+                <div class="grid-item"><img src="small6.jpg" alt="Image 6" data-large="image6.jpg"></div>
+                <div class="grid-item"><img src="small7.jpg" alt="Image 7" data-large="image7.jpg"></div>
+                <div class="grid-item"><img src="small8.jpg" alt="Image 8" data-large="image8.jpg"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add this CSS in the main stylesheet or a <style> block in the <head> -->
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+    
+        .main-image {
+            width: 50%;
+            margin-bottom: 20px;
+        }
+    
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+            width: 60%;
+        }
+    
+        .grid-item img {
+            width: 15%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+    
+        .grid-item img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+    
+    <!-- Add this JavaScript at the end of the body -->
+    <script>
+        const mainImage = document.getElementById('mainImage');
+        const smallImages = document.querySelectorAll('.grid-item img');
+    
+        smallImages.forEach(img => {
+            img.addEventListener('mouseover', () => {
+                const largeImageSrc = img.getAttribute('data-large');
+                mainImage.src = largeImageSrc;
+            });
+        });
+    </script>
 
     <div class="container blog main">
         <h2 >    
