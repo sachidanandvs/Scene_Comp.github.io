@@ -540,74 +540,7 @@
         </p>
     </div>
 
-    <div class="container blog main">
-        <h2>Interactive Image Grid</h2>
-        <p class="text">
-            Below is an example of a 4x2 interactive image grid. Hover over the smaller images to change the main image displayed.
-        </p>
-        <div class="container">
-            <!-- Main Image -->
-            <img id="mainImage" class="main-image" src="assets/figures/clarity.png" alt="Main Image">
     
-            <!-- Grid of Small Images -->
-            <div class="image-grid">
-                <div class="grid-item"><img src="assets/figures/clarity.png" alt="Image 1" data-large="image1.jpg"></div>
-                <div class="grid-item"><img src="assets/figures/clarity.png" alt="Image 2" data-large="image2.jpg"></div>
-                <div class="grid-item"><img src="assets/figures/clarity.png" alt="Image 3" data-large="image3.jpg"></div>
-                <div class="grid-item"><img src="assets/figures/clarity.png" alt="Image 4" data-large="image4.jpg"></div>
-                <div class="grid-item"><img src="assets/figures/clarity.png" alt="Image 5" data-large="image5.jpg"></div>
-                <div class="grid-item"><img src="assets/figures/clarity.png" alt="Image 6" data-large="image6.jpg"></div>
-                <div class="grid-item"><img src="assets/figures/clarity.png" alt="Image 7" data-large="image7.jpg"></div>
-                <div class="grid-item"><img src="assets/figures/clarity.png" alt="Image 8" data-large="image8.jpg"></div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Add this CSS in the main stylesheet or a <style> block in the <head> -->
-    <style>
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px;
-        }
-    
-        .main-image {
-            width: 50%;
-            margin-bottom: 20px;
-        }
-    
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 10px;
-            width: 60%;
-        }
-    
-        .grid-item img {
-            width: 15%;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-    
-        .grid-item img:hover {
-            transform: scale(1.2);
-        }
-    </style>
-    
-    <!-- Add this JavaScript at the end of the body -->
-    <script>
-        const mainImage = document.getElementById('mainImage');
-        const smallImages = document.querySelectorAll('.grid-item img');
-    
-        smallImages.forEach(img => {
-            img.addEventListener('mouseover', () => {
-                const largeImageSrc = img.getAttribute('data-large');
-                mainImage.src = largeImageSrc;
-            });
-        });
-    </script>
 
     <div class="container blog main">
         <h2 >    
