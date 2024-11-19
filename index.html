@@ -588,7 +588,53 @@
         </div>
     </div>
             
-
+    <div class="container blog main">
+        <h2>Interactive 3x1 Grid with Thumbnail Hover</h2>
+        <div class="columns-3">
+            <!-- Grid Item 1 -->
+            <div class="grid-item">
+                <div class="image-container">
+                    <div class="thumbnails-container">
+                        <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 1" class="thumbnail"
+                             data-target="large-image-1" data-hover-src="assets/figures/sc/res/2_1.png">
+                        <img src="assets/figures/sc/ref/2_ref3.png" alt="Thumbnail 2" class="thumbnail"
+                             data-target="large-image-1" data-hover-src="assets/figures/sc/res/2_3.png">
+                        <img src="assets/figures/sc/ref/2_ref5.png" alt="Thumbnail 3" class="thumbnail"
+                             data-target="large-image-1" data-hover-src="assets/figures/sc/res/2_5.png">
+                    </div>
+                    <img src="assets/figures/src/res/2.png" alt="Large Image 1" class="large-image" id="large-image-1">
+                </div>
+            </div>
+            <!-- Grid Item 2 -->
+            <div class="grid-item">
+                <div class="image-container">
+                    <div class="thumbnails-container">
+                        <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 1" class="thumbnail"
+                             data-target="large-image-2" data-hover-src="assets/figures/sc/res/2_1.png">
+                        <img src="assets/figures/sc/ref/2_ref3.png" alt="Thumbnail 2" class="thumbnail"
+                             data-target="large-image-2" data-hover-src="assets/figures/sc/res/2_3.png">
+                        <img src="assets/figures/sc/ref/2_ref5.png" alt="Thumbnail 3" class="thumbnail"
+                             data-target="large-image-2" data-hover-src="assets/figures/sc/res/2_5.png">
+                    </div>
+                    <img src="assets/figures/src/res/2.png" alt="Large Image 2" class="large-image" id="large-image-2">
+                </div>
+            </div>
+            <!-- Grid Item 3 -->
+            <div class="grid-item">
+                <div class="image-container">
+                    <div class="thumbnails-container">
+                        <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 1" class="thumbnail"
+                             data-target="large-image-3" data-hover-src="assets/figures/sc/res/2_1.png">
+                        <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 2" class="thumbnail"
+                             data-target="large-image-3" data-hover-src="assets/figures/sc/res/2_3.png">
+                        <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 3" class="thumbnail"
+                             data-target="large-image-3" data-hover-src="assets/figures/sc/res/2_5.png">
+                    </div>
+                    <img src="assets/figures/src/res/2.png" alt="Large Image 3" class="large-image" id="large-image-3">
+                </div>
+            </div>
+        </div>
+    </div>
     
 
     <div class="container blog main">
@@ -757,6 +803,37 @@
                 if (largeImage && originalSrc) {
                     largeImage.src = originalSrc;
                 }
+            });
+        });
+        </script>
+    
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.thumbnail').forEach(thumbnail => {
+                thumbnail.addEventListener('mouseenter', () => {
+                    const targetId = thumbnail.getAttribute('data-target');
+                    const hoverSrc = thumbnail.getAttribute('data-hover-src');
+                    const largeImage = document.getElementById(targetId);
+        
+                    if (largeImage) {
+                        // Save the original src if not already saved
+                        if (!largeImage.hasAttribute('data-original-src')) {
+                            largeImage.setAttribute('data-original-src', largeImage.src);
+                        }
+                        largeImage.src = hoverSrc;
+                    }
+                });
+        
+                thumbnail.addEventListener('mouseleave', () => {
+                    const targetId = thumbnail.getAttribute('data-target');
+                    const largeImage = document.getElementById(targetId);
+        
+                    if (largeImage && largeImage.hasAttribute('data-original-src')) {
+                        largeImage.src = largeImage.getAttribute('data-original-src');
+                        largeImage.removeAttribute('data-original-src'); // Clean up
+                    }
+                });
             });
         });
         </script>

@@ -127,10 +127,10 @@
   }
 }/*# sourceMappingURL=clarity.css.map */
 
-/* Grid container with 3 columns */
+/* Grid container for object placement */
 .columns-4 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Now 3 columns */
+  grid-template-columns: repeat(4, 1fr); /* Now 4 columns */
   gap: 10px; /* Adjust gap as needed */
 }
 
@@ -174,4 +174,51 @@
 
 .small-image:hover {
   transform: scale(1.1);
+}
+
+
+/* Container for the scene composition grid */
+.columns-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Individual grid item */
+.grid-item {
+  width: 100%;
+}
+
+/* Container for the image and thumbnails */
+.image-container {
+  display: flex;
+  align-items: stretch; /* Ensure thumbnails and large image are the same height */
+}
+
+/* Container for the thumbnails */
+.thumbnails-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+
+/* Thumbnails styling */
+.thumbnail {
+  cursor: pointer;
+  width: 80px;          /* Adjust the width as needed */
+  flex-grow: 1;
+  object-fit: cover;
+}
+
+/* Ensure the thumbnails container matches the height of the large image */
+.thumbnails-container, .large-image {
+  height: 100%;
+}
+
+/* Large image styling */
+.large-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
