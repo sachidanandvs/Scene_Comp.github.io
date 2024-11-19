@@ -38,30 +38,3 @@ $(document).ready(function() {
     })
 
 })
-
-document.querySelectorAll('.small-image').forEach(smallImage => {
-    smallImage.addEventListener('mouseenter', () => {
-        // Get the target large image ID and hover source
-        const targetId = smallImage.getAttribute('data-target');
-        const hoverSrc = smallImage.getAttribute('data-hover-src');
-
-        // Change the large image's source
-        const largeImage = document.getElementById(targetId);
-        if (largeImage) {
-            largeImage.setAttribute('data-original-src', largeImage.src); // Save the original src
-            largeImage.src = hoverSrc;
-        }
-    });
-
-    smallImage.addEventListener('mouseleave', () => {
-        // Restore the original source of the large image
-        const targetId = smallImage.getAttribute('data-target');
-        const largeImage = document.getElementById(targetId);
-        if (largeImage) {
-            const originalSrc = largeImage.getAttribute('data-original-src');
-            if (originalSrc) {
-                largeImage.src = originalSrc;
-            }
-        }
-    });
-});
