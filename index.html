@@ -67,6 +67,70 @@
         </div>
     </div>
 
+        <!-- Multiplane imaging for editing vs our proposed image editing method -->
+        <div class="container blog main">
+            <h2 class="text", style="text-align: center;">
+                Editing with Multiplane Image vs MDF guidance 
+            </h2>
+            
+            <p class="text", style="text-align: justify;">
+                Multiplane representation is an efficient 2.5D representation that allows for precise depth-aware editing. However, when 
+                directly applied in the pixel space, it cannot model the complex scene effects such as illumination interactions from background,
+                shadow generation and color harmonization leading to unnatural depth-aware editing outputs (as shown below). Our approach 
+                integrates the multiplane representation in the internal diffusion feature space to harness its powerful image generation priors. 
+                This results in depth consistent and realistic scene compositions, while preserving the details from the background and foreground images.  
+            </p>
+        </div>
+        <div class="container blog main gray extra-large">
+            <div class="columns-2">
+                <div class = "slider-wrapper">
+                    <h3 style="text-align: center;"> Scene Composition </h3>
+                    <img-comparison-slider class="slider-container white">
+                        <figure slot="first" class="before">
+                            <img src="assets/figures/mpi-H-sc-slider.png">
+                            <figcaption class="white">Multiplane Image</figcaption>
+                        </figure>
+                        <figure slot="second" class="after">
+                            <img src="assets/figures/ours-sc-slider.png">
+                            <figcaption class="white">MDF Guidance (Ours)</figcaption>
+                        </figure>
+                    </img-comparison-slider>
+                </div>
+                <div class = "slider-wrapper">
+                    <h3 style="text-align: center;"> Object Placement </h3>
+                    <img-comparison-slider class="slider-container white">
+                        <figure slot="first" class="before">
+                            <img src="assets/figures/mpi-H-op-slider.png">
+                            <figcaption class="white">Multiplane Image</figcaption>
+                        </figure>
+                        <figure slot="second" class="after">
+                            <img src="assets/figures/ours-op-slider.png">
+                            <figcaption class="white">MDF Guidance</figcaption>
+                        </figure>
+                    </img-comparison-slider>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Multiplane imaging for editing vs our proposed image editing method -->
+        <div class="container blog main">
+            <h2 class="text", style="text-align: center;">
+                Multiplane Diffusion Feature Guidance
+            </h2>
+            
+            <p class="text", style="text-align: justify;">
+                We apply multiplane representation in the feature space of denoising U-Net of diffusion models and called them Multiplane Diffusion Features (MDF).
+                MDF are extremely powerful and provides precise control over the generating image. However, directly editing the MDF for the generating image push
+                the latent outside the original distribution. Hence, we perform MDF guidance, where for each step of denoising the diffusion latents are guided towards
+                the target edit with guidance from the edited MDF of inputs.  
+            </p>
+        </div> 
+
+        <div class="container blog main gray">
+            <img src="assets/figures/method-overview.png">
+        </div>
+
 <!-- 
     <div class="container blog main first" id="blog-main">
         <h1>
@@ -329,49 +393,6 @@
             <!-- Repeat for additional grid items -->
         </div>
     </div> 
-    
-    
-    <div class="container blog main">
-        <h2 class="text", style="text-align: center;">
-            Editing with MDF guidance vs Multiplane Image 
-        </h2>
-        
-        <p class="text", style="text-align: justify;">
-            Multiplane representation when applied in image space can perform depth-aware editing. However, it can not model complex scene effects
-            such as illumination from the background, shadow generation and color harmonization resulting in unnatural edited image. Our MDF guidance 
-            harness the natural image generation power of diffusion model and enables realistic depth-aware compositions while preserving the foreground and background details.
-        </p>
-    </div>
-    <div class="container blog main gray extra-large">
-        <div class="columns-2">
-            <div class = "slider-wrapper">
-                <h3 style="text-align: center;"> Scene Composition </h3>
-                <img-comparison-slider class="slider-container white">
-                    <figure slot="first" class="before">
-                        <img src="assets/figures/mpi-H-sc-slider.png">
-                        <figcaption class="white">Multiplane Image</figcaption>
-                    </figure>
-                    <figure slot="second" class="after">
-                        <img src="assets/figures/ours-sc-slider.png">
-                        <figcaption class="white">MDF Guidance (Ours)</figcaption>
-                    </figure>
-                </img-comparison-slider>
-            </div>
-            <div class = "slider-wrapper">
-                <h3 style="text-align: center;"> Object Placement </h3>
-                <img-comparison-slider class="slider-container white">
-                    <figure slot="first" class="before">
-                        <img src="assets/figures/mpi-H-op-slider.png">
-                        <figcaption class="white">Multiplane Image</figcaption>
-                    </figure>
-                    <figure slot="second" class="after">
-                        <img src="assets/figures/ours-op-slider.png">
-                        <figcaption class="white">MDF Guidance</figcaption>
-                    </figure>
-                </img-comparison-slider>
-            </div>
-        </div>
-    </div>
     
     <!-- Footer Page -->
     <footer>
