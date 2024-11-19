@@ -126,3 +126,51 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }/*# sourceMappingURL=clarity.css.map */
+
+/* Grid container for the images */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Individual grid item */
+.grid-item {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Main image in the grid */
+.main-image {
+  width: 100%;
+  display: block;
+  border-radius: 5px; /* Optional: Add rounded corners */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Overlay container for small images */
+.overlay-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 60px; /* Adjust size as needed */
+  height: 60px; /* Adjust size as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.small-image {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: 2px solid #fff; /* Optional border for better visibility */
+  border-radius: 50%; /* Makes the overlay circular */
+  transition: transform 0.2s ease-in-out;
+}
+
+.small-image:hover {
+  transform: scale(1.1); /* Slightly enlarge the small image on hover */
+}

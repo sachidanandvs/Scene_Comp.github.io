@@ -399,7 +399,7 @@
                 <div class="slider-item">
                     <video loop playsinline muted autoplay src="https://mardini-vidgen.github.io/clarity/videos/5.mp4"></video>
                 </div>
-                <!-- <div class="slider-item">
+                <div class="slider-item">
                     <video loop playsinline muted autoplay src="https://mardini-vidgen.github.io/clarity/videos/6.mp4"></video>
                 </div>
                 <div class="slider-item">
@@ -408,7 +408,7 @@
                 <div class="slider-item">
                     <video loop playsinline muted autoplay src="https://mardini-vidgen.github.io/clarity/videos/8.mp4"></video>
                 </div>
-                <div class="slider-item">
+                <!-- <div class="slider-item">
                     <video loop playsinline muted autoplay src="https://mardini-vidgen.github.io/clarity/videos/9.mp4"></video>
                 </div>                   
                 <div class="slider-item">
@@ -539,6 +539,42 @@
             Our GigaGAN framework can also be used to train an efficient, higher-quality upsampler. This can be applied to real images, or to the outputs of other text-to-image models like diffusion. GigaGAN can synthesize ultra high-res images at 4k resolution in 3.66 seconds.
         </p>
     </div>
+
+    <div class="container blog main">
+        <h2>Interactive Image Grid with Hoverable Overlays</h2>
+        <div class="grid-container">
+            <!-- Grid Items -->
+            <div class="grid-item">
+                <img src="assets/figures/clarity.png" alt="Main Image 1" class="main-image" id="large-image-1">
+                <div class="overlay-container">
+                    <img src="assets/figures/clarity.png" alt="Small Image 1" class="small-image" 
+                         data-target="large-image-1" data-hover-src="assets/figures/clarity.png">
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="assets/figures/clarity.png" alt="Main Image 2" class="main-image" id="large-image-2">
+                <div class="overlay-container">
+                    <img src="assets/figures/clarity.png" alt="Small Image 2" class="small-image" 
+                         data-target="large-image-2" data-hover-src="assets/figures/clarity.png">
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="assets/figures/clarity.png" alt="Main Image 3" class="main-image" id="large-image-3">
+                <div class="overlay-container">
+                    <img src="assets/figures/clarity.png" alt="Small Image 3" class="small-image" 
+                         data-target="large-image-3" data-hover-src="assets/figures/clarity.png">
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="assets/figures/clarity.png" alt="Main Image 4" class="main-image" id="large-image-4">
+                <div class="overlay-container">
+                    <img src="assets/figures/clarity.png" alt="Small Image 4" class="small-image" 
+                         data-target="large-image-4" data-hover-src="assets/figures/clarity.png">
+                </div>
+            </div>
+        </div>
+    </div>
+            
 
     
 
@@ -682,5 +718,6 @@
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="clarity/clarity.js"></script>    
     <script src="assets/scripts/main.js"></script>    
+
     </html>
 </body>
