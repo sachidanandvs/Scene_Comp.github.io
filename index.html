@@ -322,6 +322,42 @@
             </div>
         </p> -->
 
+        <h2>
+            Slide Display 
+        </h2>
+
+        <p class="text">  
+           The Slide Display feature is designed to allow readers to easily navigate and visualise multiple sequential or related visual elements, abstracted by a slide menu with dots. Here is an example using videos generated in <a href="https://nvlabs.github.io/stylegan3/">StyleGAN-3</a>.
+        </p>
+    </div>
+
+    <div class="container blog main gray">
+        <div class="slide-menu">
+            <ul class="dots" id="slide-menu">
+                <li class="dot active"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+            </ul>
+        </div>
+       
+        <div class="slide-content", style="display: block;">
+            <video loop playsinline muted autoplay src="https://nvlabs-fi-cdn.nvidia.com/_web/stylegan3/videos/video_2_metfaces_interpolations.mp4" style="width: 100%"> </video>
+        </div>
+
+        <div class="slide-content", style="display: none;">
+            <video loop playsinline muted autoplay src="https://nvlabs-fi-cdn.nvidia.com/_web/stylegan3/videos/video_3_afhq_interpolations.mp4" style="width: 100%"> </video>
+        </div>
+
+        <div class="slide-content", style="display: none;">
+            <video loop playsinline muted autoplay src="https://nvlabs-fi-cdn.nvidia.com/_web/stylegan3/videos/video_4_beaches_interpolations.mp4" style="width: 100%"> </video>
+        </div>
+
+
+        <p class="caption">
+            The videos show interpolations between hand-picked latent points in several datasets. Observe again how the textural detail appears fixed in the StyleGAN-2 result, but transforms smoothly with the rest of the scene in the alias-free StyleGAN-3.
+        </p>
+    </div>
+
     <div class="container blog main">
         <h2>
             Auto Slideshow Display
@@ -397,6 +433,72 @@
                     <video loop playsinline muted autoplay src="https://mardini-vidgen.github.io/clarity/videos/16.mp4"></video>
                 </div> -->
             </div>
+        </div>
+    </div>
+
+    <div class="container blog main">
+        <h2>
+            Selection Display
+        </h2>
+        
+        <p class="text">
+            The Selection Display feature is designed to visualise multiple visual elements based on a user-selectable menu. This feature is commonly used for images visualised with conditional prompts, allowing users to explore different visual outputs by selecting various conditions or prompts from the menu. Here is an example using images generated in <a href="https://sites.research.google/parti/">Google Parti</a>.
+        </p>
+    </div>
+
+    <div class="container blog main gray">
+        <div class="columns-2">
+            <div>
+                 <img id="parti" src="https://sites.research.google/parti/paper_images_green_watermark_outputs/figures/cherries/tornado/tiger_cubism.jpg">
+                 <p class="caption selection">
+                    <b>Input Prompt: </b>  <br>
+                     A tornado made of 
+                     <Select id="image-selector1">
+                         <option value="sharks" selected>sharks</option>
+                         <option value="tiger">tigers</option>
+                         <option value="bees">bees</option>
+                      </Select>
+                      <select id="image-selector1-temp" style="display: none;">
+                         <option id="image-selector1-temp-option"></option>
+                     </select>
+                      crashing into a skyscraper. Painting in the style of
+                      <Select id="image-selector2">
+                         <option value="hokusai" selected>Hokusai</option>
+                         <option value="cubism"> abstract cubism</option>
+                         <option value="watercolor">watercolor</option>
+                      </Select>
+                      <select id="image-selector2-temp" style="display: none;">
+                         <option id="image-selector2-temp-option"></option>
+                     </select>
+                      .
+                 </p>
+            </div>
+
+            <div>
+                <img id="parti2" src="https://sites.research.google/parti/paper_images_green_watermark_outputs/figures/cherries/cherry2/panda_tennis.jpg">
+                <p class="caption selection">
+                   <b>Input Prompt: </b>  <br>
+                    A photo of an Athenian vase with a painting of 
+                    <Select id="image-selector3">
+                        <option value="panda" selected>pandas</option>
+                        <option value="toucan">toucans</option>
+                        <option value="pangolin">pangolins</option>
+                     </Select>
+                     <select id="image-selector3-temp" style="display: none;">
+                        <option id="image-selector3-temp-option"></option>
+                    </select>
+                     playing
+                     <Select id="image-selector4">
+                        <option value="tennis" selected>tennis</option>
+                        <option value="soccer"> soccer</option>
+                        <option value="basketball">basketball</option>
+                     </Select>
+                     <select id="image-selector4-temp" style="display: none;">
+                        <option id="image-selector4-temp-option"></option>
+                    </select>
+                    in the style of Egyptian hieroglyphics.
+                </p>
+           </div>
         </div>
     </div>
 
