@@ -178,8 +178,8 @@
 
 
 /* Container for the scene composition grid */
-/* Container for the grid */
-.grid-container {
+/* Container for the 2x3 grid */
+.grid2x3-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns */
   grid-auto-rows: auto;
@@ -187,62 +187,62 @@
 }
 
 /* Individual grid item */
-.grid-item {
+.grid2x3-item {
   width: 100%;
 }
 
 /* Container for the image and thumbnails */
-.image-container {
+.grid2x3-image-container {
   display: flex;
   align-items: stretch; /* Thumbnails and large image have equal height */
 }
 
 /* Container for the thumbnails */
-.thumbnails-container {
+.grid2x3-thumbnails-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-right: 10px;
-  flex-shrink: 0;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 /* Thumbnails styling */
-.thumbnail {
+.grid2x3-thumbnail {
   cursor: pointer;
-  width: 80px;          /* Adjust as needed */
-  flex-grow: 1;
+  width: 80px;          /* Adjust the width as needed */
+  flex-grow: 1;         /* Thumbnails expand to fill the container */
   object-fit: cover;
   border: 1px solid #ccc;
   transition: transform 0.2s;
 }
 
-.thumbnail:hover {
+.grid2x3-thumbnail:hover {
   transform: scale(1.05);
   border-color: #999;
 }
 
 /* Large image styling */
-.large-image {
+.grid2x3-large-image {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
 /* Ensure the thumbnails container matches the height of the large image */
-.image-container > .thumbnails-container,
-.image-container > .large-image {
+.grid2x3-image-container > .grid2x3-thumbnails-container,
+.grid2x3-image-container > .grid2x3-large-image {
   height: 100%;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for the 2x3 grid */
 @media (max-width: 800px) {
-  .grid-container {
-      grid-template-columns: repeat(2, 1fr);
+  .grid2x3-container {
+      grid-template-columns: repeat(2, 1fr); /* Change to 2 columns on smaller screens */
   }
 }
 
 @media (max-width: 500px) {
-  .grid-container {
-      grid-template-columns: 1fr;
+  .grid2x3-container {
+      grid-template-columns: 1fr; /* Single column on very small screens */
   }
 }
