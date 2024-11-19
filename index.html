@@ -10,7 +10,7 @@
     <meta content="en_EN" property="og:locale">
     <meta content="website" property="og:type">
     <meta content="https://shikun.io/projects/clarity" property="og:url">
-    <meta content="Clarity" property="og:title">
+    <meta content="MDF" property="og:title">
     <meta content="Website Template for AI Research" property="og:description">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -52,10 +52,12 @@
         <div class="blog-title">
             <div class="blog-intro">
                 <div>
-                    <h1 class="title">Clarity: A Minimalist Website Template for AI Research</h1>
-                    <p class="author">by Shikun Liu</p>
+                    <h1 class="title"> Multiplane Diffusion Features (MDF): Depth-Aware Editing in Diffusion Models with Multiplane Representation</h1>
                     <p class="abstract">
-                        Welcome to Clarity — an open-source, minimalist website template designed for presenting AI research. Originally developed as the foundation for my personal website, Clarity offers a modular, clean design that is easy to customise for simple, project-based website creation. With Clarity, you can effectively showcase your work, ensuring your research stands out in a visually appealing and professional manner. 
+                        Recent advancements in large-scale diffusion models have enabled several 2D image editing applications (changing object appearances, or 2D scene layouts). In this work, we propose a generalized zero-shot framework to perform depth-aware editing, such as inserting objects at a certain depth with diffusion models. Multiplane Image (MPI) representation, which decomposes an image into multiple planes placed at a fixed depth, is well-suited for depth-aware editing by allowing independent edits to each plane before recomposition. 
+                    </p>
+                    <p class="abstract">
+                        However, directly editing multiplane representation in the pixel space often fails to capture complex scene effects, such as lighting, color harmonization, and shadow generation. To address this, we introduce multiplane representation into the feature space of pretrained diffusion models, harnessing their rich image priors to ensure natural image generation while performing consistent depth-aware editing. Thus, we propose  \textit{Multiplane Diffusion Features} (MDF), a multiplane representation of the denoising UNet's internal features. MDF is highly expressive, enabling realistic, depth-consistent edits. Still, direct manipulation of MDF disrupts the native latent distribution of the diffusion model. To address this, we introduce an MDF guidance mechanism that gradually guides the latents towards the intended target edit, preserving distributional consistency throughout the denoising process. We validate our approach on two depth-aware editing tasks: a) object insertion that preserves object and scene identity with seamless blending, and b) depth based composition of two real scenes with accurate lighting. Our method outperforms object placement and image composition baselines in quantitative evaluations and a user study.
                     </p>
                    
                 </div>
@@ -74,7 +76,7 @@
         </div>
     </div>
 
-
+<!-- 
     <div class="container blog main first" id="blog-main">
         <h1>
             Introduction
@@ -87,7 +89,7 @@
             In today's AI research landscape, particularly with the rise of generative AI, it's increasingly beneficial for AI researchers to include interactive blog posts alongside research publications. Additional media materials and online demos, popularised by <a href="https://github.com/gradio-app/awesome-demos">Gradio Demos</a>, can make research more accessible and engaging to a broader audience. While large corporations can easily leverage teams of graphic designers and writers to polish their design and writing, Ph.D. students and independent AI researchers often lack the time and resources to do so. Clarity bridges this gap by offering an aesthetically pleasing, easy-to-navigate template for presenting AI research, simplifying the process of creating visually appealing technical blog posts.
         </p>
 
-    </div>
+    </div> -->
 
     <!-- <div class="container blog main gray">
             <img src="clarity/images/vit.png">
@@ -130,7 +132,7 @@
             Here is an example illustrated in <a href="https://shikun.io/projects/variational-shape-learner">VSL</a> using the <code>gray-linear</code> container colour.
         </p>
     </div> -->
-
+<!-- 
     <div class="container blog extra-large gray-linear">
         <p class="caption inline">
           <b>Inter-Class Shape Morphing</b>  
@@ -140,8 +142,6 @@
             <img src="https://shikun.io/projects/vsl/shape_morph/morph_inter2.gif">
             <img src="https://shikun.io/projects/vsl/shape_morph/morph_inter3.gif">
             <img src="https://shikun.io/projects/vsl/shape_morph/morph_inter4.gif">
-            <!-- <img src="https://shikun.io/projects/vsl/shape_morph/morph_inter5.gif">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_inter6.gif"> -->
         </div>
         <p class="caption inline">
             <b>Intra-Class Shape Morphing</b>
@@ -151,118 +151,65 @@
             <img src="https://shikun.io/projects/vsl/shape_morph/morph_intra2.gif">
             <img src="https://shikun.io/projects/vsl/shape_morph/morph_intra3.gif">
             <img src="https://shikun.io/projects/vsl/shape_morph/morph_intra4.gif">
-            <!-- <img src="https://shikun.io/projects/vsl/shape_morph/morph_intra5.gif">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_intra6.gif"> -->
         </div>
         <p class="caption">Note that, although these animations have a white background, they beautifully blend within this container. </p>
-    </div>
-
-
-    <div class="container blog main">
-        <h2>
-            Selection Display
-        </h2>
-        
-        <p class="text">
-            The Selection Display feature is designed to visualise multiple visual elements based on a user-selectable menu. This feature is commonly used for images visualised with conditional prompts, allowing users to explore different visual outputs by selecting various conditions or prompts from the menu. Here is an example using images generated in <a href="https://sites.research.google/parti/">Google Parti</a>.
-        </p>
-    </div>
-
-    <div class="container blog main gray">
-        <div class="columns-2">
-            <div>
-                 <img id="parti" src="https://sites.research.google/parti/paper_images_green_watermark_outputs/figures/cherries/tornado/tiger_cubism.jpg">
-                 <p class="caption selection">
-                    <b>Input Prompt: </b>  <br>
-                     A tornado made of 
-                     <Select id="image-selector1">
-                         <option value="sharks" selected>sharks</option>
-                         <option value="tiger">tigers</option>
-                         <option value="bees">bees</option>
-                      </Select>
-                      <select id="image-selector1-temp" style="display: none;">
-                         <option id="image-selector1-temp-option"></option>
-                     </select>
-                      crashing into a skyscraper. Painting in the style of
-                      <Select id="image-selector2">
-                         <option value="hokusai" selected>Hokusai</option>
-                         <option value="cubism"> abstract cubism</option>
-                         <option value="watercolor">watercolor</option>
-                      </Select>
-                      <select id="image-selector2-temp" style="display: none;">
-                         <option id="image-selector2-temp-option"></option>
-                     </select>
-                      .
-                 </p>
-            </div>
-
-            <div>
-                <img id="parti2" src="https://sites.research.google/parti/paper_images_green_watermark_outputs/figures/cherries/cherry2/panda_tennis.jpg">
-                <p class="caption selection">
-                   <b>Input Prompt: </b>  <br>
-                    A photo of an Athenian vase with a painting of 
-                    <Select id="image-selector3">
-                        <option value="panda" selected>pandas</option>
-                        <option value="toucan">toucans</option>
-                        <option value="pangolin">pangolins</option>
-                     </Select>
-                     <select id="image-selector3-temp" style="display: none;">
-                        <option id="image-selector3-temp-option"></option>
-                    </select>
-                     playing
-                     <Select id="image-selector4">
-                        <option value="tennis" selected>tennis</option>
-                        <option value="soccer"> soccer</option>
-                        <option value="basketball">basketball</option>
-                     </Select>
-                     <select id="image-selector4-temp" style="display: none;">
-                        <option id="image-selector4-temp-option"></option>
-                    </select>
-                    in the style of Egyptian hieroglyphics.
-                </p>
-           </div>
-        </div>
-    </div>
+    </div> -->
 
     <div class="container blog main">
-        <h2>
-            Comparison Display
+        <h2 style="text-align: center;">
+            Depth-Aware Scene Composition
         </h2>
         
-        <p class="text">
+        <p class="text", style="text-align: justify;">
             The Comparison Display feature allows users to visualise two images side by side with a controllable slider, making it easy to compare visual results against a baseline. This feature is particularly useful for showcasing improvements or differences between two images. Here is an example using upsampled images generated with <a href="https://mingukkang.github.io/GigaGAN/">GigaGAN</a>.
         </p>
     </div>
+
     <div class="container blog main gray extra-large">
-        <div class="columns-2">
-            <img-comparison-slider class="slider-container white">
-                <figure slot="first" class="before">
-                    <img src="https://mingukkang.github.io/GigaGAN/static/images/iguana_input.jpg">
-                    <figcaption class="white">Input Image (128px)</figcaption>
-                </figure>
-                <figure slot="second" class="after">
-                    <img src="https://mingukkang.github.io/GigaGAN/static/images/iguana_output.jpg">
-                    <figcaption class="white">GigaGAN Upsampled (1024px)</figcaption>
-                </figure>
-            </img-comparison-slider>
-            <img-comparison-slider class="slider-container">
-                <figure slot="first" class="before">
-                    <img src="https://mingukkang.github.io/GigaGAN/static/images/plant_input.jpg">
-                    <figcaption>Input Image (128px)</figcaption>
-                </figure>
-                <figure slot="second" class="after">
-                    <img src="https://mingukkang.github.io/GigaGAN/static/images/plant_output.jpg">
-                    <figcaption>GigaGAN Upsampled (1024px)</figcaption>
-                </figure>
-            </img-comparison-slider>
+        <h2>Interactive 2x3 Grid with Thumbnail Hover</h2>
+        <div class="grid2x3-container" id="grid2x3">
+            <!-- Grid Item 1 -->
+            <div class="grid2x3-item">
+                <div class="grid2x3-image-container">
+                    <div class="grid2x3-thumbnails-container">
+                        <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
+                             data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_1.png">
+                        <img src="assets/figures/sc/ref/2_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
+                             data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_3.png">
+                        <img src="assets/figures/sc/ref/2_ref5.jpg" alt="Thumbnail 3" class="grid2x3-thumbnail"
+                             data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_5.png">
+                    </div>
+                    <img src="assets/figures/sc/src/2.png" alt="Large Image 1" class="grid2x3-large-image" id="grid2x3-large-image-1">
+                </div>
+            </div>
+            <!-- Repeat Grid Items 2 to 6 -->
+            <!-- Grid Item 2 -->
+            <div class="grid2x3-item">
+                 <div class="grid2x3-image-container">
+                    <div class="grid2x3-thumbnails-container">
+                        <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
+                            data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/2_1.png">
+                        <img src="assets/figures/sc/ref/2_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
+                            data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/2_3.png">
+                        <img src="assets/figures/sc/ref/2_ref5.jpg" alt="Thumbnail 3" class="grid2x3-thumbnail"
+                            data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/2_5.png">
+                    </div>
+                    <img src="assets/figures/sc/src/2.png" alt="Large Image 2" class="grid2x3-large-image" id="grid2x3-large-image-2">
+                </div>
+            </div>
         </div>
-        
-        <p class="caption">
-            Our GigaGAN framework can also be used to train an efficient, higher-quality upsampler. This can be applied to real images, or to the outputs of other text-to-image models like diffusion. GigaGAN can synthesize ultra high-res images at 4k resolution in 3.66 seconds.
-        </p>
     </div>
 
-    
+    <div class="container blog main">
+        <h2 style="text-align: center;">
+            Depth-Aware Object Placement 
+        </h2>
+        <p class="text", style="text-align: justify;">
+            The Comparison Display feature allows users to visualise two images side by side with a controllable slider, making it easy to compare visual results against a baseline. This feature is particularly useful for showcasing improvements or differences between two images. Here is an example using upsampled images generated with <a href="https://mingukkang.github.io/GigaGAN/">GigaGAN</a>.
+        </p>
+    </div>  
+
+        
     <div class="container blog main gray extra-large">
         <h2>Interactive Image Grid with Hoverable Overlays</h2>
         <div class="columns-4">
@@ -308,57 +255,46 @@
             </div>
             <!-- Repeat for additional grid items -->
         </div>
-    </div>
-            
-    <div class="container blog main gray extra-large">
-        <h2>Interactive 2x3 Grid with Thumbnail Hover</h2>
-        <div class="grid2x3-container" id="grid2x3">
-            <!-- Grid Item 1 -->
-            <div class="grid2x3-item">
-                <div class="grid2x3-image-container">
-                    <div class="grid2x3-thumbnails-container">
-                        <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
-                             data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_1.png">
-                        <img src="assets/figures/sc/ref/2_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
-                             data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_3.png">
-                        <img src="assets/figures/sc/ref/2_ref5.jpg" alt="Thumbnail 3" class="grid2x3-thumbnail"
-                             data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_5.png">
-                    </div>
-                    <img src="assets/figures/sc/src/2.png" alt="Large Image 1" class="grid2x3-large-image" id="grid2x3-large-image-1">
-                </div>
-            </div>
-            <!-- Repeat Grid Items 2 to 6 -->
-            <!-- Grid Item 2 -->
-            <div class="grid2x3-item">
-                 <div class="grid2x3-image-container">
-                    <div class="grid2x3-thumbnails-container">
-                        <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
-                            data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/2_1.png">
-                        <img src="assets/figures/sc/ref/2_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
-                            data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/2_3.png">
-                        <img src="assets/figures/sc/ref/2_ref5.jpg" alt="Thumbnail 3" class="grid2x3-thumbnail"
-                            data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/2_5.png">
-                    </div>
-                    <img src="assets/figures/sc/src/2.png" alt="Large Image 2" class="grid2x3-large-image" id="grid2x3-large-image-2">
-                </div>
-            </div>
+    </div> 
 
-            <!-- Grid Item 3 -->
-            <div class="grid2x3-item">
-                <div class="grid2x3-image-container">
-                    <div class="grid2x3-thumbnails-container">
-                        <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
-                            data-target="grid2x3-large-image-3" data-hover-src="assets/figures/sc/res/2_1.png">
-                        <img src="assets/figures/sc/ref/2_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
-                            data-target="grid2x3-large-image-3" data-hover-src="assets/figures/sc/res/2_3.png">
-                        <img src="assets/figures/sc/ref/2_ref5.jpg" alt="Thumbnail 3" class="grid2x3-thumbnail"
-                            data-target="grid2x3-large-image-3" data-hover-src="assets/figures/sc/res/2_5.png">
-                    </div>
-                    <img src="assets/figures/sc/src/2.png" alt="Large Image 3" class="grid2x3-large-image" id="grid2x3-large-image-3">
-                </div>
-            </div>
-                
+
+    
+    <div class="container blog main">
+        <h2>
+            Comparison Display
+        </h2>
+        
+        <p class="text">
+            The Comparison Display feature allows users to visualise two images side by side with a controllable slider, making it easy to compare visual results against a baseline. This feature is particularly useful for showcasing improvements or differences between two images. Here is an example using upsampled images generated with <a href="https://mingukkang.github.io/GigaGAN/">GigaGAN</a>.
+        </p>
+    </div>
+    <div class="container blog main gray extra-large">
+        <div class="columns-2">
+            <img-comparison-slider class="slider-container white">
+                <figure slot="first" class="before">
+                    <img src="https://mingukkang.github.io/GigaGAN/static/images/iguana_input.jpg">
+                    <figcaption class="white">Input Image (128px)</figcaption>
+                </figure>
+                <figure slot="second" class="after">
+                    <img src="https://mingukkang.github.io/GigaGAN/static/images/iguana_output.jpg">
+                    <figcaption class="white">GigaGAN Upsampled (1024px)</figcaption>
+                </figure>
+            </img-comparison-slider>
+            <img-comparison-slider class="slider-container">
+                <figure slot="first" class="before">
+                    <img src="https://mingukkang.github.io/GigaGAN/static/images/plant_input.jpg">
+                    <figcaption>Input Image (128px)</figcaption>
+                </figure>
+                <figure slot="second" class="after">
+                    <img src="https://mingukkang.github.io/GigaGAN/static/images/plant_output.jpg">
+                    <figcaption>GigaGAN Upsampled (1024px)</figcaption>
+                </figure>
+            </img-comparison-slider>
         </div>
+        
+        <p class="caption">
+            Our GigaGAN framework can also be used to train an efficient, higher-quality upsampler. This can be applied to real images, or to the outputs of other text-to-image models like diffusion. GigaGAN can synthesize ultra high-res images at 4k resolution in 3.66 seconds.
+        </p>
     </div>
     
     <!-- Footer Page -->
