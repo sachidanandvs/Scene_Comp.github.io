@@ -183,7 +183,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns */
   grid-auto-rows: auto;
-  gap: 50px;
+  gap: 20px;
 }
 
 /* Individual grid item */
@@ -212,8 +212,7 @@
   width: 80px;
   flex-grow: 1;
   object-fit: cover;
-  border: 2px solid #fff;
-  border-radius: 5px;
+  border: 1px solid #ccc;
   transition: transform 0.2s;
 }
 
