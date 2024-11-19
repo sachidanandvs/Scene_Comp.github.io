@@ -194,7 +194,7 @@
 /* Container for the image and thumbnails */
 .grid2x3-image-container {
   display: flex;
-  align-items: stretch; /* Thumbnails and large image have equal height */
+  align-items: stretch;
 }
 
 /* Container for the thumbnails */
@@ -203,14 +203,14 @@
   flex-direction: column;
   justify-content: space-between;
   margin-right: 10px;
-  flex-shrink: 0; /* Prevent shrinking */
+  flex-shrink: 0;
 }
 
 /* Thumbnails styling */
 .grid2x3-thumbnail {
   cursor: pointer;
-  width: 80px;          /* Adjust the width as needed */
-  flex-grow: 1;         /* Thumbnails expand to fill the container */
+  width: 80px;
+  flex-grow: 1;
   object-fit: cover;
   border: 1px solid #ccc;
   transition: transform 0.2s;
@@ -224,6 +224,7 @@
 /* Large image styling */
 .grid2x3-large-image {
   width: 100%;
+  max-width: 400px; /* Set a max width to prevent large images from covering the page */
   height: auto;
   object-fit: cover;
 }
@@ -237,12 +238,12 @@
 /* Responsive adjustments for the 2x3 grid */
 @media (max-width: 800px) {
   .grid2x3-container {
-      grid-template-columns: repeat(2, 1fr); /* Change to 2 columns on smaller screens */
+      grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 500px) {
   .grid2x3-container {
-      grid-template-columns: 1fr; /* Single column on very small screens */
+      grid-template-columns: 1fr;
   }
 }

@@ -812,32 +812,37 @@
     
     
     <script>
+        // JavaScript to handle hover interaction for small images in the 2x3 grid
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.grid2x3-thumbnail').forEach(thumbnail => {
-                thumbnail.addEventListener('mouseenter', () => {
-                    const targetId = thumbnail.getAttribute('data-target');
-                    const hoverSrc = thumbnail.getAttribute('data-hover-src');
-                    const largeImage = document.getElementById(targetId);
-        
-                    if (largeImage) {
-                        // Save the original src if not already saved
-                        if (!largeImage.hasAttribute('data-original-src')) {
-                            largeImage.setAttribute('data-original-src', largeImage.src);
+            // Scope the selection to the 2x3 grid container
+            const grid2x3Container = document.getElementById('grid2x3');
+            if (grid2x3Container) {
+                grid2x3Container.querySelectorAll('.grid2x3-thumbnail').forEach(thumbnail => {
+                    thumbnail.addEventListener('mouseenter', () => {
+                        const targetId = thumbnail.getAttribute('data-target');
+                        const hoverSrc = thumbnail.getAttribute('data-hover-src');
+                        const largeImage = grid2x3Container.querySelector(`#${targetId}`);
+            
+                        if (largeImage) {
+                            // Save the original src if not already saved
+                            if (!largeImage.hasAttribute('data-original-src')) {
+                                largeImage.setAttribute('data-original-src', largeImage.src);
+                            }
+                            largeImage.src = hoverSrc;
                         }
-                        largeImage.src = hoverSrc;
-                    }
+                    });
+            
+                    thumbnail.addEventListener('mouseleave', () => {
+                        const targetId = thumbnail.getAttribute('data-target');
+                        const largeImage = grid2x3Container.querySelector(`#${targetId}`);
+            
+                        if (largeImage && largeImage.hasAttribute('data-original-src')) {
+                            largeImage.src = largeImage.getAttribute('data-original-src');
+                            largeImage.removeAttribute('data-original-src'); // Clean up
+                        }
+                    });
                 });
-        
-                thumbnail.addEventListener('mouseleave', () => {
-                    const targetId = thumbnail.getAttribute('data-target');
-                    const largeImage = document.getElementById(targetId);
-        
-                    if (largeImage && largeImage.hasAttribute('data-original-src')) {
-                        largeImage.src = largeImage.getAttribute('data-original-src');
-                        largeImage.removeAttribute('data-original-src'); // Clean up
-                    }
-                });
-            });
+            }
         });
         </script>
 
