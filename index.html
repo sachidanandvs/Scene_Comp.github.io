@@ -54,19 +54,10 @@
                 <div>
                     <h1 class="title"> Multiplane Diffusion Features (MDF): Depth-Aware Editing in Diffusion Models with Multiplane Representation</h1>
                     <p class="abstract">
-                        Recent advancements in large-scale diffusion models have enabled several 2D image editing applications (changing object appearances, or 2D scene layouts). In this work, we propose a generalized zero-shot framework to perform depth-aware editing, such as inserting objects at a certain depth with diffusion models. Multiplane Image (MPI) representation, which decomposes an image into multiple planes placed at a fixed depth, is well-suited for depth-aware editing by allowing independent edits to each plane before recomposition. 
-                    </p>
-                    <p class="abstract">
-                        However, directly editing multiplane representation in the pixel space often fails to capture complex scene effects, such as lighting, color harmonization, and shadow generation. To address this, we introduce multiplane representation into the feature space of pretrained diffusion models, harnessing their rich image priors to ensure natural image generation while performing consistent depth-aware editing. Thus, we propose  \textit{Multiplane Diffusion Features} (MDF), a multiplane representation of the denoising UNet's internal features. MDF is highly expressive, enabling realistic, depth-consistent edits. Still, direct manipulation of MDF disrupts the native latent distribution of the diffusion model. To address this, we introduce an MDF guidance mechanism that gradually guides the latents towards the intended target edit, preserving distributional consistency throughout the denoising process. We validate our approach on two depth-aware editing tasks: a) object insertion that preserves object and scene identity with seamless blending, and b) depth based composition of two real scenes with accurate lighting. Our method outperforms object placement and image composition baselines in quantitative evaluations and a user study.
+                        In this work, we propose a generalized zero-shot framework to perform depth-aware compositions, such as inserting objects at a certain depth with diffusion models. We integrate Multiplane Image representation - an effective depth-aware scene representation in the features space of diffusion models for realistic depth-aware editing. We propose Multiplane Diffusion Features (MDF), a multiplane representation of the denoising UNet's internal features. For editing, we introduce an MDF guidance mechanism that gradually guides the latents toward the intended target edit, preserving distributional consistency throughout the denoising process. We validate our approach on two depth-aware editing tasks: a) object insertion that preserves object and scene identity with seamless blending, and b) depth-based composition of two real scenes with accurate lighting.
                     </p>
                    
-                </div>
-               
-                <div class="info">
-                    <div>
-                        <a href="https://github.com/lorenmt/clarity-template" class="button icon" style="background-color: rgba(255, 255, 255, 0.25); margin-bottom: 0;">Source Code <i class="fa-solid fa-code"></i></a>
-                    </div>
-                </div>
+                </div> 
             </div>
 
             <div class="blog-cover">
