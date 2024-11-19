@@ -156,8 +156,8 @@
 /* Overlay container */
 .overlay-container {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10px;
+  left: 10px;
   width: 20%;
   height: auto;
 }
@@ -178,9 +178,11 @@
 
 
 /* Container for the scene composition grid */
-.columns-3 {
+/* Container for the grid */
+.grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-auto-rows: auto;
   gap: 20px;
 }
 
@@ -192,7 +194,7 @@
 /* Container for the image and thumbnails */
 .image-container {
   display: flex;
-  align-items: stretch; /* Ensure thumbnails and large image are the same height */
+  align-items: stretch; /* Thumbnails and large image have equal height */
 }
 
 /* Container for the thumbnails */
@@ -201,19 +203,22 @@
   flex-direction: column;
   justify-content: space-between;
   margin-right: 10px;
+  flex-shrink: 0;
 }
 
 /* Thumbnails styling */
 .thumbnail {
   cursor: pointer;
-  width: 80px;          /* Adjust the width as needed */
+  width: 80px;          /* Adjust as needed */
   flex-grow: 1;
   object-fit: cover;
+  border: 1px solid #ccc;
+  transition: transform 0.2s;
 }
 
-/* Ensure the thumbnails container matches the height of the large image */
-.thumbnails-container, .large-image {
-  height: 100%;
+.thumbnail:hover {
+  transform: scale(1.05);
+  border-color: #999;
 }
 
 /* Large image styling */
@@ -221,4 +226,23 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+/* Ensure the thumbnails container matches the height of the large image */
+.image-container > .thumbnails-container,
+.image-container > .large-image {
+  height: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+  .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid-container {
+      grid-template-columns: 1fr;
+  }
 }
