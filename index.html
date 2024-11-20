@@ -100,11 +100,11 @@
                     <h3 style="text-align: center;"> Object Placement </h3>
                     <img-comparison-slider class="slider-container white">
                         <figure slot="first" class="before">
-                            <img src="assets/figures/comp/image_mpi_2.png">
+                            <img src="assets/figures/comp/image_mpi_3.png">
                             <figcaption class="white">Multiplane Image</figcaption>
                         </figure>
                         <figure slot="second" class="after">
-                            <img src="assets/figures/comp/ours_2.png">
+                            <img src="assets/figures/comp/ours_3.png">
                             <figcaption class="white">MDF Guidance</figcaption>
                         </figure>
                     </img-comparison-slider>
@@ -294,6 +294,88 @@
 
     <div class="container blog main">
         <h2 style="text-align: center;">
+            Scene Relighting
+        </h2>
+        
+        <p class="text", style="text-align: justify;">
+            Our method can generate realistic compositions of background and foreground scenes in a depth-aware manner.
+            The proposed method generates realistic compositions with appropriate illumination interactions while preserving foreground and background content. 
+        </p>
+    </div>
+
+    <div class="container blog main gray extra-large">
+        
+        <p class="text" style="text-align: center; color: rgba(4, 4, 127, 0.993); font-style: italic;">
+            Hover over the background images to compose the scene with selected background image.
+        </p>
+        <div class="grid1x3-container" id="grid1x3">
+            <!-- Currently using only two grid, as it looks good in high quality--> 
+            <!-- Grid Item 1 -->
+            <!-- <div class="grid2x3-item">
+                <div class="grid2x3-image-container">
+                    <div class="grid2x3-thumbnails-wrapper">
+                        <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
+                        <div class="grid2x3-thumbnails-container">
+                            <img src="assets/figures/sc/ref/2_ref1.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
+                                data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_1.png">
+                            <img src="assets/figures/sc/ref/2_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
+                                data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_3.png">
+                            <img src="assets/figures/sc/ref/2_ref5.jpg" alt="Thumbnail 3" class="grid2x3-thumbnail"
+                                data-target="grid2x3-large-image-1" data-hover-src="assets/figures/sc/res/2_5.png">
+                        </div>
+                    </div>
+                    <div class="grid2x3-large-image-wrapper">
+                        <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
+                        <img src="assets/figures/sc/src/2.png" alt="Large Image 1" class="grid2x3-large-image" id="grid2x3-large-image-1">
+                    </div>
+                </div>
+            </div> -->
+            <!-- Repeat Grid Items 2 to 6 -->
+            <!-- Grid Item 2 -->
+            <div class="grid1x3-item">
+                <div class="grid1x3-image-container">
+                    <div class="grid1x3-thumbnails-wrapper">
+                        <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
+                        <div class="grid2x3-thumbnails-container">
+                            <img src="assets/figures/sc/ref/t_ref2.png" alt="Thumbnail 1" class="grid1x3-thumbnail"
+                                data-target="grid1x3-large-image-2" data-hover-src="assets/figures/sc/res/t2.png">
+                            <img src="assets/figures/sc/ref/t_ref3.jpg" alt="Thumbnail 2" class="grid1x3-thumbnail"
+                                data-target="grid1x3-large-image-2" data-hover-src="assets/figures/sc/res/t3.png">
+                            <img src="assets/figures/sc/ref/t_ref4.png" alt="Thumbnail 3" class="grid1x3-thumbnail"
+                                data-target="grid1x3-large-image-2" data-hover-src="assets/figures/sc/res/t4.png">
+                        </div>
+                    </div>
+                    <div class="grid1x3-large-image-wrapper">
+                        <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
+                        <img src="assets/figures/sc/src/t.png" alt="Large Image 2" class="grid1x3-large-image" id="grid1x3-large-image-2">
+                    </div>
+                </div>
+            </div>
+            <div class="grid1x3-item">
+                <div class="grid1x3-image-container">
+                    <div class="grid1x3-thumbnails-wrapper">
+                        <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
+                        <div class="grid1x3-thumbnails-container">
+                            <img src="assets/figures/sc/ref/3_ref1.png" alt="Thumbnail 1" class="grid1x3-thumbnail"
+                                data-target="grid1x3-large-image-3" data-hover-src="assets/figures/sc/res/3_1.png">
+                            <img src="assets/figures/sc/ref/3_ref2.jpg" alt="Thumbnail 2" class="grid1x3-thumbnail"
+                                data-target="grid1x3-large-image-3" data-hover-src="assets/figures/sc/res/3_2.jpg">
+                            <img src="assets/figures/sc/ref/3_ref3.jpg" alt="Thumbnail 3" class="grid1x3-thumbnail"
+                                data-target="grid1x3-large-image-3" data-hover-src="assets/figures/sc/res/3_3.png">
+                        </div>
+                    </div>
+                    <div class="grid1x3-large-image-wrapper">
+                        <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
+                        <img src="assets/figures/sc/src/3.jpg" alt="Large Image 3" class="grid1x3-large-image" id="grid1x3-large-image-3">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container blog main">
+        <h2 style="text-align: center;">
             Depth-Aware Object Placement 
         </h2>
         <p class="text", style="text-align: justify;">
@@ -474,6 +556,41 @@
             }
         });
         </script>
+
+<script>
+    // JavaScript to handle hover interaction for small images in the 1x3 grid ( for scene relighting)
+    document.addEventListener('DOMContentLoaded', () => {
+        // Scope the selection to the 1x3 grid container
+        const grid2x3Container = document.getElementById('grid1x3');
+        if (grid2x3Container) {
+            grid2x3Container.querySelectorAll('.grid1x3-thumbnail').forEach(thumbnail => {
+                thumbnail.addEventListener('mouseenter', () => {
+                    const targetId = thumbnail.getAttribute('data-target');
+                    const hoverSrc = thumbnail.getAttribute('data-hover-src');
+                    const largeImage = grid2x3Container.querySelector(`#${targetId}`);
+        
+                    if (largeImage) {
+                        // Save the original src if not already saved
+                        if (!largeImage.hasAttribute('data-original-src')) {
+                            largeImage.setAttribute('data-original-src', largeImage.src);
+                        }
+                        largeImage.src = hoverSrc;
+                    }
+                });
+        
+                thumbnail.addEventListener('mouseleave', () => {
+                    const targetId = thumbnail.getAttribute('data-target');
+                    const largeImage = grid2x3Container.querySelector(`#${targetId}`);
+        
+                    if (largeImage && largeImage.hasAttribute('data-original-src')) {
+                        largeImage.src = largeImage.getAttribute('data-original-src');
+                        largeImage.removeAttribute('data-original-src'); // Clean up
+                    }
+                });
+            });
+        }
+    });
+    </script>
 
     </html>
 </body> 

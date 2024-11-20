@@ -247,3 +247,75 @@
       grid-template-columns: 1fr;
   }
 }
+
+/* Container for the scene Relighting grid */
+/* Container for the 1x3 grid */
+.grid1x3-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-auto-rows: auto;
+  gap: 20px;
+}
+
+/* Individual grid item */
+.grid1x3-item {
+  width: 100%;
+}
+
+/* Container for the image and thumbnails */
+.grid1x3-image-container {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Container for the thumbnails */
+.grid1x3-thumbnails-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+/* Thumbnails styling */
+.grid1x3-thumbnail {
+  cursor: pointer;
+  width: 115px;
+  flex-grow: 1;
+  object-fit: cover;
+  border: 5px solid #ccc;
+  transition: transform 0.2s;
+}
+
+.grid1x3-thumbnail:hover {
+  transform: scale(1.05);
+  border-color: #999;
+}
+
+/* Large image styling */
+.grid1x3-large-image {
+  width: 160%;
+  max-width: 400px; /* Set a max width to prevent large images from covering the page */
+  height: auto;
+  object-fit: cover;
+}
+
+/* Ensure the thumbnails container matches the height of the large image */
+.grid1x3-image-container > .grid1x3-thumbnails-container,
+.grid1x3-image-container > .grid1x3-large-image {
+  height: 100%;
+}
+
+/* Responsive adjustments for the 2x3 grid */
+@media (max-width: 800px) {
+  .grid1x3-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid1x3-container {
+      grid-template-columns: 1fr;
+  }
+}
+
