@@ -75,11 +75,12 @@
             </h2>
             
             <p class="text", style="text-align: justify;">
-                Multiplane representation is an efficient 2.5D representation that allows for precise depth-aware editing. However, when 
-                directly applied in the pixel space, it cannot model the complex scene effects such as illumination interactions from background,
-                shadow generation and color harmonization leading to unnatural depth-aware editing outputs (as shown below). Our approach 
-                integrates the multiplane representation in the internal diffusion feature space to harness its powerful image generation priors. 
-                This results in depth consistent and realistic scene compositions, while preserving the details from the background and foreground images.  
+            Multiplane Image is an efficient 2.5D scene representation that allows for depth-aware editing. 
+            However, when directly applied in the pixel space, it struggles to model the accurate foreground and 
+            background scene interactions, particularly in terms of scene lighting, color harmonization, 
+            and shadow generation (as shown below). To address this, our approach leverages the rich image generation
+            priors from pretrained image diffusion models via MDF guidance. This enables depth-consistent, realistic
+            scene compositions while preserving details in foreground and background regions. 
             </p>
         </div>
         <div class="container blog main gray extra-large">
