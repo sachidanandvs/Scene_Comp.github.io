@@ -169,7 +169,7 @@
   cursor: pointer;
   border: 2px solid #fff;
   border-radius: 5px;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.05s ease-in-out;
 }
 
 .small-image:hover {
@@ -213,7 +213,7 @@
   flex-grow: 1;
   object-fit: cover;
   border: 5px solid #ccc;
-  transition: transform 0.2s;
+  transition: transform 0.05s;
 }
 
 .grid2x3-thumbnail:hover {
@@ -284,7 +284,7 @@
   flex-grow: 1;
   object-fit: cover;
   border: 5px solid #ccc;
-  transition: transform 0.2s;
+  transition: transform 0.05s;
 }
 
 .grid1x3-thumbnail:hover {
