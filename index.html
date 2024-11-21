@@ -53,6 +53,8 @@
             <div class="blog-intro">
                 <div>
                     <h1 class="title"> Multiplane Diffusion Features (MDF): Depth-Aware Editing in Diffusion Models with Multiplane Representation</h1>
+                    <h3 class="warning" style="text-align: center; color: rgba(127, 4, 4, 0.993); font-style: italic;">
+                        If the images take time to load, pls wait for 2-3 mins </h2>
                     <p class="abstract">
                         In this work, we introduce a generalized zero-shot framework for depth-aware image editing. Our approach enables realistic scene modifications, such as object insertion at specific depths and blending a scene's foreground with another's background while preserving the identity of the input scene. The key idea is to integrate Multiplane Image (MPI) representation in the feature space of diffusion models. Specifically, we propose Multiplane Diffusion Features (MDF), a multiplane representation of the denoising UNet's hidden features. For image editing, we introduce an MDF guidance mechanism that progressively steers the latents toward the desired edit while maintaining the latents’ distributional consistency throughout the denoising process. We validate our approach on two depth-aware editing tasks: a) object insertion that preserves object and scene identity with seamless blending, and b) depth-based composition of two real scenes with accurate lighting.
 
@@ -259,25 +261,6 @@
                     <div class="grid2x3-thumbnails-wrapper">
                         <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
                         <div class="grid2x3-thumbnails-container">
-                            <img src="assets/figures/sc/ref/t_ref2.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/t2.png">
-                            <img src="assets/figures/sc/ref/t_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/t3.png">
-                            <img src="assets/figures/sc/ref/t_ref4.png" alt="Thumbnail 3" class="grid2x3-thumbnail"
-                                data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/t4.png">
-                        </div>
-                    </div>
-                    <div class="grid2x3-large-image-wrapper">
-                        <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
-                        <img src="assets/figures/sc/src/t.jpg" alt="Large Image 2" class="grid2x3-large-image" id="grid2x3-large-image-2">
-                    </div>
-                </div>
-            </div>
-            <div class="grid2x3-item">
-                <div class="grid2x3-image-container">
-                    <div class="grid2x3-thumbnails-wrapper">
-                        <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
-                        <div class="grid2x3-thumbnails-container">
                             <img src="assets/figures/sc/ref/3_ref1.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
                                 data-target="grid2x3-large-image-3" data-hover-src="assets/figures/sc/res/3_1.png">
                             <img src="assets/figures/sc/ref/3_ref2.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
@@ -289,6 +272,26 @@
                     <div class="grid2x3-large-image-wrapper">
                         <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
                         <img src="assets/figures/sc/src/3.jpg" alt="Large Image 3" class="grid2x3-large-image" id="grid2x3-large-image-3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid2x3-item">
+                <div class="grid2x3-image-container">
+                    <div class="grid2x3-thumbnails-wrapper">
+                        <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
+                        <div class="grid2x3-thumbnails-container">
+                            <img src="assets/figures/sc/ref/t_ref2.png" alt="Thumbnail 1" class="grid2x3-thumbnail"
+                                data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/t2.png">
+                            <img src="assets/figures/sc/ref/t_ref3.jpg" alt="Thumbnail 2" class="grid2x3-thumbnail"
+                                data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/t3.png">
+                            <img src="assets/figures/sc/ref/t_ref4.png" alt="Thumbnail 3" class="grid2x3-thumbnail"
+                                data-target="grid2x3-large-image-2" data-hover-src="assets/figures/sc/res/t4.png">
+                        </div>
+                    </div>
+                    <div class="grid2x3-large-image-wrapper">
+                        <h4 class="Output" style="text-align: center; margin-top: 10px;">Output</h4> 
+                        <img src="assets/figures/sc/src/t.jpg" alt="Large Image 2" class="grid2x3-large-image" id="grid2x3-large-image-2">
                     </div>
                 </div>
             </div>
