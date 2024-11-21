@@ -53,11 +53,8 @@
             <div class="blog-intro">
                 <div>
                     <h1 class="title"> Multiplane Diffusion Features (MDF): Depth-Aware Editing in Diffusion Models with Multiplane Representation</h1>
-                    <h3 class="warning" style="text-align: center; color: rgba(127, 4, 4, 0.993); font-style: italic;">
-                        If the images take time to load, pls wait for 2-3 mins </h2>
                     <p class="abstract">
                         In this work, we introduce a generalized zero-shot framework for depth-aware image editing. Our approach enables realistic scene modifications, such as object insertion at specific depths and blending a scene's foreground with another's background while preserving the identity of the input scene. The key idea is to integrate Multiplane Image (MPI) representation in the feature space of diffusion models. Specifically, we propose Multiplane Diffusion Features (MDF), a multiplane representation of the denoising UNet's hidden features. For image editing, we introduce an MDF guidance mechanism that progressively steers the latents toward the desired edit while maintaining the latents’ distributional consistency throughout the denoising process. We validate our approach on two depth-aware editing tasks: a) object insertion that preserves object and scene identity with seamless blending, and b) depth-based composition of two real scenes with accurate lighting.
-
                     </p>
                    
                 </div> 
@@ -86,6 +83,9 @@
             </p>
         </div>
         <div class="container blog main gray extra-large">
+            <p class="text" style="text-align: center; color: rgba(4, 4, 127, 0.993); font-style: italic;">
+                Drag the slider to see the comparison with Multiplane image editing. 
+            </p>
             <div class="columns-2">
                 <div class = "slider-wrapper">
                     <h3 style="text-align: center;"> Scene Composition </h3>
@@ -101,7 +101,7 @@
                     </img-comparison-slider>
                 </div>
                 <div class = "slider-wrapper">
-                    <h3 style="text-align: center;"> Object Placement </h3>
+                    <h3 style="text-align: center;"> Object Insertion </h3>
                     <img-comparison-slider class="slider-container white">
                         <figure slot="first" class="before">
                             <img src="assets/figures/comp/image_mpi_4.png">
@@ -109,7 +109,7 @@
                         </figure>
                         <figure slot="second" class="after">
                             <img src="assets/figures/comp/ours_4.png">
-                            <figcaption class="white">MDF Guidance</figcaption>
+                            <figcaption class="white">MDF Guidance (Ours)</figcaption>
                         </figure>
                     </img-comparison-slider>
                 </div>
@@ -391,7 +391,7 @@
 
     <div class="container blog main">
         <h2 style="text-align: center;">
-            Depth-Aware Object Placement 
+            Depth-Aware Object Insertion 
         </h2>
         <p class="text", style="text-align: justify;">
             Given a single object image, our method can realistically insert the object at a precise depth, with natural blending with scene content, color harmonization, and appropriate shadows. 
