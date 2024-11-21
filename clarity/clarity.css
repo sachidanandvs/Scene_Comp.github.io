@@ -319,3 +319,11 @@
   }
 }
 
+/* Container for the scene Relighting grid */
+/* Container for the 1x3 grid */
+.grid1x3-container_new {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 2 columns */
+  grid-auto-rows: auto;
+  gap: 20px;
+}

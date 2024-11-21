@@ -336,13 +336,13 @@
                 <div class="grid1x3-image-container">
                     <div class="grid1x3-thumbnails-wrapper">
                         <h4 class="thumbnail-title" style="text-align: center;">Background</h4>
-                        <div class="grid2x3-thumbnails-container">
+                        <div class="grid1x3-thumbnails-container">
                             <img src="assets/figures/sr/ref/9_ref1.png" alt="Thumbnail 1" class="grid1x3-thumbnail"
                                 data-target="grid1x3-large-image-2" data-hover-src="assets/figures/sr/res/9_1.png">
-                            <img src="assets/figures/sr/ref/9_ref2.png" alt="Thumbnail 2" class="grid1x3-thumbnail"
-                                data-target="grid1x3-large-image-2" data-hover-src="assets/figures/sr/res/9_2.png">
-                            <img src="assets/figures/sr/ref/9_ref3.jpg" alt="Thumbnail 3" class="grid1x3-thumbnail"
+                            <img src="assets/figures/sr/ref/9_ref3.jpg" alt="Thumbnail 2" class="grid1x3-thumbnail"
                                 data-target="grid1x3-large-image-2" data-hover-src="assets/figures/sr/res/9_3.png">
+                            <img src="assets/figures/sr/ref/9_ref4.jpg" alt="Thumbnail 3" class="grid1x3-thumbnail"
+                                data-target="grid1x3-large-image-2" data-hover-src="assets/figures/sr/res/9_4.png">
                         </div>
                     </div>
                     <div class="grid1x3-large-image-wrapper">
@@ -475,7 +475,46 @@
             </div>
             <!-- Repeat for additional grid items -->
         </div>
-    </div> 
+    </div>
+    
+    <!-- For object moving -->
+    <div class="container blog main gray extra-large">
+        <h2 style="text-align: center;">
+            Hover-Enabled 1x3 Grid
+        </h2>
+        <p class="text" style="text-align: center; color: rgba(4, 4, 127, 0.993); font-style: italic;">
+            Hover over the large images to see them change dynamically.
+        </p>
+        <div class="grid1x3-container_new" id="new-grid1x3">
+            <!-- Grid Item 1 -->
+            <div class="grid1x3-item">
+                <div class="grid1x3-image-container">
+                    <img src="assets/figures/obm/src/1_src.png" 
+                         alt="Main Image 1" 
+                         class="hover-image" 
+                         data-hover-src="assets/figures/obm/res/1_res.png">
+                </div>
+            </div>
+            <!-- Grid Item 2 -->
+            <div class="grid1x3-item">
+                <div class="grid1x3-image-container">
+                    <img src="assets/figures/obm/src/2_src.png" 
+                         alt="Main Image 2" 
+                         class="hover-image" 
+                         data-hover-src="assets/figures/obm/res/2_res.png">
+                </div>
+            </div>
+            <!-- Grid Item 3 -->
+            <div class="grid1x3-item">
+                <div class="grid1x3-image-container">
+                    <img src="assets/figures/obm/src/3_src.png" 
+                         alt="Main Image 3" 
+                         class="hover-image" 
+                         data-hover-src="assets/figures/obm/res/3_res.png">
+                </div>
+            </div>
+        </div>
+    </div>
     
     <!-- Footer Page -->
     <footer>
@@ -591,6 +630,28 @@
         }
     });
     </script>
+
+    <script>
+        // JavaScript to handle hover interaction for large images
+        document.querySelectorAll('.hover-image').forEach(image => {
+            let originalSrc; // Variable to store the original src
+
+            image.addEventListener('mouseenter', () => {
+                originalSrc = image.src; // Save the original src
+                const hoverSrc = image.getAttribute('data-hover-src');
+                if (hoverSrc) {
+                    image.src = hoverSrc; // Change to hover src
+                }
+            });
+
+            image.addEventListener('mouseleave', () => {
+                if (originalSrc) {
+                    image.src = originalSrc; // Restore the original src
+                }
+            });
+        });
+    </script>
+
 
     </html>
 </body> 
