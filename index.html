@@ -54,7 +54,8 @@
                 <div>
                     <h1 class="title"> Multiplane Diffusion Features (MDF): Depth-Aware Editing in Diffusion Models with Multiplane Representation</h1>
                     <p class="abstract">
-                        In this work, we propose a generalized zero-shot framework to perform depth-aware compositions, such as inserting objects at a certain depth with diffusion models. We integrate Multiplane Image representation - an effective depth-aware scene representation in the features space of diffusion models for realistic depth-aware editing. We propose Multiplane Diffusion Features (MDF), a multiplane representation of the denoising UNet's internal features. For editing, we introduce an MDF guidance mechanism that gradually guides the latents toward the intended target edit, preserving distributional consistency throughout the denoising process. We validate our approach on two depth-aware editing tasks: a) object insertion that preserves object and scene identity with seamless blending, and b) depth-based composition of two real scenes with accurate lighting.
+                        In this work, we introduce a generalized zero-shot framework for depth-aware image editing. Our approach enables realistic scene modifications, such as object insertion at specific depths and blending a scene's foreground with another's background while preserving the identity of the input scene. The key idea is to integrate Multiplane Image (MPI) representation in the feature space of diffusion models. Specifically, we propose Multiplane Diffusion Features (MDF), a multiplane representation of the denoising UNet's hidden features. For image editing, we introduce an MDF guidance mechanism that progressively steers the latents toward the desired edit while maintaining the latents’ distributional consistency throughout the denoising process. We validate our approach on two depth-aware editing tasks: a) object insertion that preserves object and scene identity with seamless blending, and b) depth-based composition of two real scenes with accurate lighting.
+
                     </p>
                    
                 </div> 
@@ -74,11 +75,12 @@
             </h2>
             
             <p class="text", style="text-align: justify;">
-                Multiplane representation is an efficient 2.5D representation that allows for precise depth-aware editing. However, when 
-                directly applied in the pixel space, it cannot model the complex scene effects such as illumination interactions from background,
-                shadow generation and color harmonization leading to unnatural depth-aware editing outputs (as shown below). Our approach 
-                integrates the multiplane representation in the internal diffusion feature space to harness its powerful image generation priors. 
-                This results in depth consistent and realistic scene compositions, while preserving the details from the background and foreground images.  
+            Multiplane Image is an efficient 2.5D scene representation that allows for depth-aware editing. 
+            However, when directly applied in the pixel space, it struggles to model the accurate foreground and 
+            background scene interactions, particularly in terms of scene lighting, color harmonization, 
+            and shadow generation (as shown below). To address this, our approach leverages the rich image generation
+            priors from pretrained image diffusion models via MDF guidance. This enables depth-consistent, realistic
+            scene compositions while preserving details in foreground and background regions. 
             </p>
         </div>
         <div class="container blog main gray extra-large">
@@ -120,10 +122,12 @@
             </h2>
             
             <p class="text", style="text-align: justify;">
-                We apply multiplane representation in the feature space of denoising U-Net of diffusion models and called them Multiplane Diffusion Features (MDF).
-                MDF are extremely powerful and provides precise control over the generating image. However, directly editing the MDF for the generating image push
-                the latent outside the original distribution. Hence, we perform MDF guidance, where for each step of denoising the diffusion latents are guided towards
-                the target edit with guidance from the edited MDF of inputs.  
+            We introduce Multiplane Diffusion Features (MDF), a multiplane representation embedded in the feature space of the 
+            denoising U-Net within diffusion models. MDF is a highly expressive representation and enables precise control over
+            the generated image.  However, directly editing the MDF during generation can push the latents outside the original 
+            distribution, resulting in unnatural editing results. To address this, we propose a softer way to edit the diffusion 
+            latents with MDF guidance, where the diffusion latents are progressively steered toward the desired edit at each 
+            denoising step. 
             </p>
         </div> 
 
